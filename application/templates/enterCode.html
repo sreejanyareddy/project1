@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Code reading page
+{% endblock %}
+
+{% block content %}
+    <center>
+        <form method="post" action = "/Student/SubmitCode/{{ id }}">
+            {% csrf_token %}
+            <!-- Assuming your input field name is 'code' -->
+            Enter your code here: <input type="text" name="code">
+            <input type="submit" value="Submit">
+        </form>
+        <p><a href = "/Student/myTimetable">BACK</a></p>
+    </center>
+{% endblock %}

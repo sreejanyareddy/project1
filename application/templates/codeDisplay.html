@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+
+{% block title %}
+   Unique code
+{% endblock %}
+
+
+{% block content %}
+<br>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="container text-center bg-white col-sm-4">
+<center>
+  The UNIQUE CODE for the course {{ course.name }}
+  <h1>{{ code }}</h1>
+  <p><a type="button " class= " btn btn-danger"href =" /Teacher/Close link/{{ course.id }}"> Close link</a></p>
+</center>
+</div>
+<div class="col-sm-4"></div>
+</div>
+{% endblock %}

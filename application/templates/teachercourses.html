@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Teacher Courses
+  
+{% endblock %}
+
+
+{% block content %}
+<br>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="container text-center bg-white col-sm-4">
+<h1>{{teacher.name}}'s COURSES</h1>
+<br>
+<table class = table>
+  <thead></thead>
+  
+  {% for course in teacher.curCourses.all%}
+  <tr>
+    <td>{{ course }}</td>
+  <td><a type="button" class = "btn btn-outline-dark" href="MyCourses/{{ course.id }}">View Attendance</a></td>
+</tr> 
+  {% endfor %}
+</table>
+<a type = "button" class = "btn btn-outline-dark" href = "/Teacher"> BACK </a></br>
+</div>
+<div class="col-sm-4"></div>
+</div>
+{% endblock %}

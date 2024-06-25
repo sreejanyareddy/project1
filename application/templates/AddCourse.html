@@ -1,0 +1,22 @@
+{% extends "master.html" %}
+
+{% block title %}
+  New Course
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="container col-sm-4 bg-white text-center">
+    <h1>New Course</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p><a type="button" class="btn btn-outline-danger" href="/Superadmin">Cancel</a></p>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+{% endblock %}

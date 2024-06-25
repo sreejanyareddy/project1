@@ -1,0 +1,33 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Teacher page
+{% endblock %}
+
+
+{% block content %}
+
+<br><br>
+<div class = "row">
+  <div class = "col-sm-4"></div>
+  <div class = "col-sm-4 text-center bg-white">
+    <center>
+  
+ <h1> WELCOME  {{ teacher.name }} </h1>
+ <ul>
+
+    <!-- <a href = "/Teacher/myTimetable">My timeTable</a> -->
+    <a type="button" class="btn btn-info py-5 rounded-circle btn-lg bg-black text-white" href="/Teacher/myTimetable">My timeTable</a>
+    <!-- <a href = "/Teacher/MyCourses">My courses</a> -->
+    <a type="button" class="btn btn-info py-5 rounded-circle btn-lg bg-black text-white" href="/Teacher/MyCourses">My courses</a>
+    <!-- <a href = "/"> Logout </a></li> -->
+    <br>
+    <a type="button" class="btn btn-outline-danger" href="/"> Logout </a>
+       
+ </ul>
+</center>
+</div>
+ <div class = "col-sm-4"></div>
+</div>
+
+{% endblock %}

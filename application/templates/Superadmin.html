@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Admin page
+{% endblock %}
+
+
+{% block content %}
+<center>
+  <div class = "row">
+    <div class = "col-sm-3"></div>
+    <div class = "container col-sm-6 bg-white text-center">
+ <h1> WELCOME  {{ Sadmin.name }} </h1><br>
+ <ul>
+
+    <a type="button" class="btn btn-info py-5 rounded-circle btn-lg bg-black text-white" href = "/Superadmin/newcourse">Add Course</a>
+    <a type="button" class="btn btn-info py-5 rounded-circle btn-lg bg-black text-white"href = "/Superadmin/newTeacher">Add Teacher</a>
+    <a type="button" class="btn btn-info py-5 rounded-circle btn-lg bg-black text-white"href = "/Superadmin/newStudent">Add Student</a>
+    <br>
+    <a type="button" class="btn btn-info py-5 rounded-circle btn-lg bg-black text-white"href = "/Superadmin/newClass">Add Class</a>
+    <a type="button" class="btn btn-info py-5 rounded-circle btn-lg bg-black text-white"href = "/Superadmin/allCourses">View Courses</a>
+    <br><br>
+    <a type = "button" class = "btn btn-primary" href = "/"> Logout </a>
+       
+ </ul>
+</div>
+<div class = "col-sm-3"></div>
+</div>
+</center>
+{% endblock %}

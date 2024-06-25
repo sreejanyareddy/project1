@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Course details page
+{% endblock %}
+
+
+{% block content %}<br><br><br>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="container text-center bg-white col-sm-4">
+<center>
+ <h3>{{ course.name }}</h3>
+ Class : {{ course.Class }} <br>
+ Slot : {{ course.slot }} <br>
+ Teachers :  {% for x in teachers %} <li> {{ x.name }} </li>  {%  endfor %}
+ 
+
+ 
+<br>
+</center>
+<a type = "button" class = "btn btn-outline-dark" href = "/Superadmin/allCourses">BACK</a></br>
+</div>
+<div class="col-sm-4"></div>
+</div>
+{% endblock %}

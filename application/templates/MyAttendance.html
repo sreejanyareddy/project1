@@ -1,0 +1,68 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My attendance page
+{% endblock %}
+
+{% block content %}
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 40px;
+    }
+    </style>
+<center>
+ <h2> My attendance </h2>
+
+ <form method="post" action="">
+    {% csrf_token %}
+   <label for="start_date">Start Date:</label>
+   <input type="date" id="start_date" name="start_date" value="{{ date }}">
+   <label for="end_date">End Date:</label>
+   <input type="date" id="end_date" name="end_date" value="{{ date }}">
+   <input type="submit" value="Search">
+ </form>
+ <br>
+
+ <table border="2" >
+    <tr>
+        <th>COURSE NAME</th>
+        <th>Total Classes</th>
+        <th>Classes Present</th>
+    </tr>
+    {% for x in courses %}
+    <tr>
+        <td>{{ x.name }}</td>
+        {% for key, value in totalcount.items %}
+        {% if key == x.id %}
+            <td>{{ value }}</td>
+        {% endif %}
+    {% empty %}
+        <td>0</td> 
+    {% endfor %}
+    {% for key, value in presentCount.items %}
+        {% if key == x.id %}
+            <td>{{ value }}</td>
+        {% endif %}
+    {% empty %}
+        <td>0</td> 
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    
+            
+       
+    
+ </table>
+ <br>
+ <p><a type = "button" class = "btn btn-outline-dark" href = "/Student">BACK</a></p>
+ 
+ 
+</center>
+{% endblock %}

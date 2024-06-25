@@ -1,0 +1,71 @@
+{% extends "master.html" %}
+
+{% block title %}
+  {{ course.name }} Attendance page
+{% endblock %}
+
+{% block content %}
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 40px;
+    }
+    </style>
+<center>
+ <h2> {{ course.name }} Attendance page </h2>
+ <!-- Search form for date range -->
+ <form method="post" action="">
+    {% csrf_token %}
+    <label for="start_date">Start Date:</label>
+    <!-- Use start_date variable to prepopulate start date -->
+    <input type="date" id="start_date" name="start_date" value="{{ start_date }}">
+    <label for="end_date">End Date:</label>
+    <!-- Use end_date variable to prepopulate end date -->
+    <input type="date" id="end_date" name="end_date" value="{{ end_date }}">
+    <input type="submit" value="Search">
+</form>
+
+ <br>
+
+ <table border="2" >
+    <tr>
+        <th>STUDENT NAME</th>
+        <th>Total Classes</th>
+        <th>Classes Present</th>
+    </tr>
+    {% for student in stuList %}
+    <tr>
+        <td>{{ student.name }}</td>
+        {% for key, value in totalCount_list.items %}
+        {% if key == student.id %}
+            <td>{{ value }}</td>
+        {% endif %}
+    {% empty %}
+        <td>0</td> 
+    {% endfor %}
+    {% for key, value in presentCount_list.items %}
+        {% if key == student.id %}
+            <td>{{ value }}</td>
+        {% endif %}
+    {% empty %}
+        <td>0</td> {# Default value if key not found #}
+    {% endfor %}
+    </tr>
+    {% endfor %}
+    
+            
+       
+    
+ </table>
+ <br
+ <p><a href = "/Teacher/MyCourses">BACK</a></p>
+ 
+ 
+</center>
+{% endblock %}

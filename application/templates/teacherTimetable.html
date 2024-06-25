@@ -1,0 +1,306 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Teacher timetable page
+  
+{% endblock %}
+
+
+{% block content %}
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 40px;
+    }
+    </style>
+<center>
+ <table border = '2'>
+    <tr>
+        <th> Day </th>
+        <th> 8:00-9:00</th> <th> 9:00-10:00</th><th> 10:00-11:00</th><th> 11:00-12:00</th><th> 12:00-1:00</th><th rowspan="6">BREAK</th>
+        <th> 2:00-3:00</th><th> 3:00-4:00</th><th> 4:00-5:00</th>
+              
+    </tr>
+    <tr>
+        <td> MONDAY </td>
+        <td colspan = "2">{% for x in curCourses %}
+            {% if x.slot.name == 'A' %}
+            {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" value="{{ x.id }}">
+                <button type="submit">Give code</button>
+            </form>
+            
+            {% endif %}
+            {% endfor %}
+              
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'F' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'C' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'D' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+      </tr>
+      <tr>
+        <td> TUESDAY </td>
+        <td colspan = "2">{% for x in curCourses %}
+            {% if x.slot.name == 'D' %}
+            {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" value="{{ x.id }}">
+                <button type="submit">Give code</button>
+            </form>
+            
+            {% endif %}
+            {% endfor %}
+              
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'A' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'B' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'E' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "3">{% for x in curCourses %}
+          {% if x.slot.name == 'G' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+      </tr>
+      <tr>
+        <td> WEDNESDAY </td>
+        <td colspan = "1">{% for x in curCourses %}
+            {% if x.slot.name == 'F' %}
+            {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" value="{{ x.id }}">
+                <button type="submit">Give code</button>
+            </form>
+            
+            {% endif %}
+            {% endfor %}
+              
+        </td>
+        <td colspan = "2">{% for x in curCourses %}
+          {% if x.slot.name == 'B' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "2">{% for x in curCourses %}
+          {% if x.slot.name == 'C' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "3">{% for x in curCourses %}
+          {% if x.slot.name == 'H' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+      
+      </tr>
+      <tr>
+        <td> THURSDAY </td>
+        <td colspan = "2">{% for x in curCourses %}
+            {% if x.slot.name == 'J' %}
+            {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" value="{{ x.id }}">
+                <button type="submit">Give code</button>
+            </form>
+            
+            {% endif %}
+            {% endfor %}
+              
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'B' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'F' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'E' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "3">{% for x in curCourses %}
+          {% if x.slot.name == 'I' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+      </tr>
+      <tr>
+        <td> FRIDAY </td>
+        <td colspan = "2">{% for x in curCourses %}
+            {% if x.slot.name == 'E' %}
+            {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" value="{{ x.id }}">
+                <button type="submit">Give code</button>
+            </form>
+            
+            {% endif %}
+            {% endfor %}
+              
+        </td>
+        <td colspan = "2">{% for x in curCourses %}
+          {% if x.slot.name == 'J' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        <td colspan = "1">{% for x in curCourses %}
+          {% if x.slot.name == 'F' %}
+          {{ x.name }}<form method="post" action="Codegeneration/{{ x.id }}">
+              {% csrf_token %}
+              <input type="hidden" name="course_id" value="{{ x.id }}">
+              <button type="submit">Give code</button>
+          </form>
+          
+          {% endif %}
+          {% endfor %}
+            
+        </td>
+        
+      </tr>
+  </table>
+</center>
+<center>
+  <p>
+  <a href = "/Teacher" > Back </a>
+</p>
+</center>
+{% endblock %}
